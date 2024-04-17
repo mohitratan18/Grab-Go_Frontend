@@ -1,0 +1,30 @@
+.addItems-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 3rem;
+  /* align-items: center; */
+  justify-content: center;
+  border-radius: 12px;
+}
+.addItems-lable {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 3px;
+}
+.addItems-input {
+  padding: 8px 12px;
+  box-shadow: 10px 10px 8px #80808050;
+  border: 1px solid black;
+  outline: 0px;
+  border-radius: 8px;
+}
+.addItems-btn {
+  margin: 10px;
+  border: 1.2px solid #5a9e44;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  color: #5a9e44;
+  background-color: #5a9e4412;
+  cursor: pointer;
+}
