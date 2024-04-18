@@ -4,12 +4,9 @@ import React,{useState} from 'react'
 import Newcontext from './ApprovedContext'
 const ApprovedItems = (props) => {
     const [Data, setData] = useState([]);
-    const update = (data)=>{
-        setData(data);
-        console.log("data set hogaya");
-    }
+    const [Unapproved, setUnapproved] = useState([]);
   return (
-    <Newcontext.Provider value={{Data,update}}>
+    <Newcontext.Provider value={{Data,setData,Unapproved,setUnapproved}}>
         {props.children}
     </Newcontext.Provider>
   )

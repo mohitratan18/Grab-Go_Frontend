@@ -14,7 +14,7 @@ const Product = ({ data,approve }) => {
       const id = data._id;
       const url = `http://localhost:8000/api/adminfunctions/approve/${id}`;
       const response = await fetch(url, {
-        method: "GET",
+        method: "POST",
         mode: "cors",
         headers: {
           "Content-Type": "application/json",
