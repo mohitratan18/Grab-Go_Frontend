@@ -77,7 +77,7 @@ const AdminProducts = () => {
         <button className="SellerHome-popup-close" onClick={handleclose}>
           X
         </button>
-        <Additems />
+        <Additems admin={true}/>
       </dialog>
     </>
   );
