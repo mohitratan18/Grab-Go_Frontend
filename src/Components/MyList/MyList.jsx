@@ -2,7 +2,9 @@
 import React, { useEffect, useState } from "react";
 import "./MyList.css";
 import MyListItem from "../MyListItem/MyListItem";
+import NearByStore from "../NearByStore/NearByStore";
 const MyList = () => {
+  const [shoplist,setshoplist] = useState(null)
   useEffect(() => {
     fetchdata();
   }, []);
@@ -25,8 +27,31 @@ const MyList = () => {
     <div className="MyList-container">
       {data.map((item, index) => {
         console.log(item.productId);
-        return <MyListItem id={item.productId} key={index} />;
+        return <MyListItem shoplist={shoplist} setshoplist={setshoplist} id={item.productId} key={index} />;
       })}
+       <dialog id="my_modal_3" className="modal">
+            <div className="modal-box">
+              <form method="dialog">
+                {/* if there is a button in form, it will close the modal */}
+                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                  ✕
+                </button>
+              </form>
+              <h3 className="font-bold text-lg m-4">Near By stores</h3>
+              {shoplist &&
+                shoplist.map((shop, index) => {
+                  // console.log(shop);
+                  return (
+                      <NearByStore
+                    key={index}
+                    link={shop.coord}
+                    name={shop.name}
+                    distance={shop.distance}
+                    />
+                  );
+                })}
+            </div>
+          </dialog>
     </div>
   );
 };

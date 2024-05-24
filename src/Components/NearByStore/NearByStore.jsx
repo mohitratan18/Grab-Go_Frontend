@@ -3,10 +3,6 @@
 import React, { useEffect } from "react";
 
 const NearByStore = ({ link, name, distance }) => {
-    useEffect(() => {
-      console.log(link," ",name," ",distance);
-    }, [])
-    
   const url = `https://www.google.com/maps/search/${link}`;
   return (
     <div className="flex gap-4">

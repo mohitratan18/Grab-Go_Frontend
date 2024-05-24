@@ -5,13 +5,12 @@ import { useEffect, useState } from "react";
 import React from "react";
 import "./MyListItem.css";
 import NearByStore from "../NearByStore/NearByStore";
-const MyListItem = ({ id }) => {
+const MyListItem = ({ id,setshoplist,shoplist }) => {
   useEffect(() => {
     // console.log(id);
     fetchproduct();
   }, []);
   const [data, setdata] = useState([]);
-  const [shoplist, setshoplist] = useState([]);
   const fetchproduct = async () => {
     const url = `http://localhost:8000/api/sellerfunctions/fetchitem/${id}`;
     const response = await fetch(url, {
@@ -38,8 +37,10 @@ const MyListItem = ({ id }) => {
         "auth-token": localStorage.getItem("auth-token"),
       },
     });
-    // console.log(await response.json());
-    setshoplist(await response.json());
+    const res = await response.json();
+    console.log(res);
+    setshoplist([]);
+    setshoplist(res);
   };
   return (
     <div className="MyListItem-container">
@@ -57,28 +58,7 @@ const MyListItem = ({ id }) => {
           <button className="btn btn-primary" onClick={findstore}>
             find Store
           </button>
-          <dialog id="my_modal_3" className="modal">
-            <div className="modal-box">
-              <form method="dialog">
-                {/* if there is a button in form, it will close the modal */}
-                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-                  ✕
-                </button>
-              </form>
-              <h3 className="font-bold text-lg m-4">Near By stores</h3>
-              {shoplist.map((shop, index) => {
-                // console.log(shop);
-                return (
-                  <NearByStore
-                    key={index}
-                    link={shop.coord}
-                    name={shop.name}
-                    distance={shop.distance}
-                  />
-                );
-              })}
-            </div>
-          </dialog>
+         
         </div>
       </div>
     </div>
