@@ -1,0 +1,23 @@
+.MyListItem-container{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin: 12px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 1rem;
+}
+.MyListItem-container2{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.MyListItem-container3{
+    display: flex;
+    gap: 12px;
+    margin: auto;
+}
+.MyListItem-img > img{
+    height: 150px;
+    width: 150px;
+}

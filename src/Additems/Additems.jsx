@@ -12,12 +12,6 @@ const Additems = ({ admin }) => {
   const Handleclick = async (e) => {
     e.preventDefault();
     if (admin == true) {
-      // console.log("admin");
-      // console.log(Name);
-      // console.log(product_description);
-      // console.log(price);
-      // console.log(img);
-
       const url = `http://localhost:8000/api/adminfunctions/additems`;
       const response = await fetch(url, {
         method: "POST",

@@ -19,6 +19,7 @@ const Sellerlogin = () => {
     const data = await response.json();
     if (data.status) {
       localStorage.setItem("auth-token",data.authtoken);
+      localStorage.setItem("user", "seller");
       Navigate('/sellerhome');
     } else {
       alert(data.message);

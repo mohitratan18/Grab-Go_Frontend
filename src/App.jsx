@@ -9,6 +9,7 @@ import SellerHome from "./Components/SellerHome/SellerHome";
 // import SellerState from "./Context/SellerState";
 import ApprovedItems from "./Context/ApprovedItems";
 import AdminHome from "./Components/Admin/Admin Home/AdminHome";
+import Account from "./Components/Account/Account";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route exact path="/sellerlogin" element={<Sellerlogin />} />
             <Route exact path="/sellersignup" element={<Sellersignup />} />
             <Route exact path="/admin" element={<AdminHome />} />
+            <Route exact path="/account" element={<Account/> }/>
           </Routes>
         </BrowserRouter>
       </ApprovedItems>

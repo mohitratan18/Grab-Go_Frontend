@@ -26,7 +26,6 @@ const Sellersignup = () => {
     const res = await response.json();
     // console.log(await response.json());
     if (res.status == true) {
-      // localStorage.setItem("auth-token", res.authtoken);
       alert("Account created. please login");
       navigate("/sellerlogin");
     } else {
